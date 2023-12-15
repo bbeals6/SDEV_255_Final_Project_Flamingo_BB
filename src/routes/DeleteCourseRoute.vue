@@ -25,7 +25,7 @@ export default {
     }}
     console.log(config);
     try {
-      await axios.post(`https://m08finalprojectbackend.phillipsnodgras.repl.co/course/delete/${this.$route.params.id}`, null , config)
+      await axios.post(`http://localhost:3000/course/delete/${this.$route.params.id}`, null , config)
       this.message = 'The course has been deleted.'
     } catch (err) {
       this.message = `Error: ${err.message}`

@@ -9,7 +9,7 @@ const uuid = require("uuid");
 
 app.use(
   require("cors")({
-    origin: "https://m08finalprojectfrontend.phillipsnodgras.repl.co",
+    origin: "http://localhost:8080",
     credentials: true,
   }),
 );

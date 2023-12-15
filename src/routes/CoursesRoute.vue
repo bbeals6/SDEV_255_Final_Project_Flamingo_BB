@@ -144,7 +144,7 @@ export default {
     },
     async purchaseCourses() {
       const config =  {headers:{'authorization': this.pizza}}
-      const response = await axios.post('https://m08finalprojectbackend.phillipsnodgras.repl.co/checkout',this.shoppingCart, config);
+      const response = await axios.post('http://localhost:3000/checkout',this.shoppingCart, config);
       console.log(response);
       console.log(response.data);
       if (response.data.message == 'Courses inserted successfully')
@@ -159,7 +159,7 @@ export default {
     async checkAuthentication() {
       try {
         const config =  {headers:{'authorization': this.pizza}}
-        const response = await axios.get('https://m08finalprojectbackend.phillipsnodgras.repl.co/auth/check', config);
+        const response = await axios.get('http://localhost:3000/auth/check', config);
         console.log(response.data); // Response will contain { authenticated: true, isTeacher: true/false }
         if(response.data.authenticated == false)
         {
@@ -188,7 +188,7 @@ export default {
         'authorization': this.pizza
       }}
     try {
-      this.courses = (await axios.get('https://m08finalprojectbackend.phillipsnodgras.repl.co/courses', config)).data;
+      this.courses = (await axios.get('http://localhost:3000/courses', config)).data;
     } catch (error) {
       this.$router.push('/login');
     }

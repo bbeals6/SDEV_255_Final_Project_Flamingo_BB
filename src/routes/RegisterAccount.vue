@@ -31,7 +31,7 @@
     methods: {
       async submitForm() {
         try {
-          await axios.post('https://m08finalprojectbackend.phillipsnodgras.repl.co/register', this.user)
+          await axios.post('http://localhost:3000/register', this.user)
           this.message = 'The user has been created.'
           this.$router.push('/login')
 

@@ -65,7 +65,7 @@
       this.checkAuthentication()
       try {
         const config =  {headers:{'authorization': this.pizza}}
-        const response = await axios.get('https://m08finalprojectbackend.phillipsnodgras.repl.co/studentclasslist', config);
+        const response = await axios.get('http://localhost:3000/studentclasslist', config);
         console.log(response.data);
         this.courses = response.data;
       } catch (error) {
@@ -79,7 +79,7 @@
       async checkAuthentication() {
         try {
           const config =  {headers:{'authorization': this.pizza}}
-          const response = await axios.get('https://m08finalprojectbackend.phillipsnodgras.repl.co/auth/check', config);
+          const response = await axios.get('http://localhost:3000/auth/check', config);
           console.log(response.data); // Response will contain { authenticated: true, isTeacher: true/false }
           if(response.data.authenticated == false)
           {

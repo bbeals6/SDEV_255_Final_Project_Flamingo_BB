@@ -45,7 +45,7 @@ export default {
     async checkAuthentication() {
       try {
         const config =  {headers:{'authorization': this.pizza}}
-        const response = await axios.get('https://m08finalprojectbackend.phillipsnodgras.repl.co/auth/check', config);
+        const response = await axios.get('http://localhost:3000/auth/check', config);
         console.log(response.data); // Response will contain { authenticated: true, isTeacher: true/false }
         if(response.authenticated ==false)
         {
@@ -66,7 +66,7 @@ export default {
         {headers:{
           'authorization': this.pizza
         }}
-        await axios.post('https://m08finalprojectbackend.phillipsnodgras.repl.co/course/create', this.course, config)
+        await axios.post('http://localhost:3000/course/create', this.course, config)
         this.message = 'The course has been created.'
         this.$router.push('/courses')
       } catch (err) {
